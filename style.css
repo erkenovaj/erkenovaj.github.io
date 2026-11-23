@@ -61,6 +61,15 @@ h1 {
   margin: 0 0 0.35rem;
 }
 
+h1.tagline {
+  font-size: 1.45rem;
+  text-transform: none;
+  letter-spacing: 0;
+  line-height: 1.3;
+  font-weight: 600;
+  margin: 0 0 0.45rem;
+}
+
 .meta {
   color: var(--muted);
   margin: 0 0 0.35rem;
