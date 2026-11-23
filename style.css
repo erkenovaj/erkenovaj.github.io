@@ -1,0 +1,267 @@
+/* Jamilya Erkenova — personal site
+   Plain CSS, no frameworks, no webfonts. Print-friendly. */
+
+:root {
+  --bg: #faf9f6;
+  --text: #211f1c;
+  --muted: #6e685e;
+  --accent: #16604b;
+  --accent-strong: #0e4536;
+  --hairline: #e3e0d8;
+  --selection: #d9e8e1;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #17191b;
+    --text: #e6e3dd;
+    --muted: #96908a;
+    --accent: #6cbfa4;
+    --accent-strong: #8fd3bd;
+    --hairline: #2b2e31;
+    --selection: #24443a;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Charter, "Bitstream Charter", "Sitka Text", Cambria, Georgia, serif;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection { background: var(--selection); }
+
+main {
+  max-width: 46rem;
+  margin: 0 auto;
+  padding: 3.5rem 1.375rem 4rem;
+}
+
+/* ---------- header ---------- */
+
+h1 {
+  font-size: clamp(1.9rem, 5vw, 2.5rem);
+  font-weight: 600;
+  letter-spacing: 0.045em;
+  text-transform: uppercase;
+  margin: 0 0 0.5rem;
+}
+
+.tagline {
+  font-size: 1.2rem;
+  margin: 0 0 0.35rem;
+}
+
+.meta {
+  color: var(--muted);
+  margin: 0 0 0.35rem;
+}
+
+.seeking {
+  font-style: italic;
+  color: var(--accent);
+  margin: 0.35rem 0 0.9rem;
+}
+
+.contacts {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.contacts li { display: inline-block; }
+
+.contacts li + li::before { content: "\00a0\00b7\00a0"; }
+
+.contacts .loc { font-style: italic; }
+
+/* ---------- sections ---------- */
+
+section { margin-top: 3.2rem; }
+
+h2 {
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border-top: 1px solid var(--hairline);
+  padding-top: 0.9rem;
+  margin: 0 0 1.1rem;
+}
+
+h3 {
+  font-style: italic;
+  font-weight: 600;
+  font-size: 1.05rem;
+  margin: 1.6rem 0 0.7rem;
+}
+
+#about p { margin: 0; }
+
+/* ---------- publications & projects ---------- */
+
+.pubs {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pubs li { margin: 0 0 1.05rem; }
+
+.pub-title { margin: 0; font-weight: 600; }
+
+.pub-venue {
+  margin: 0.1rem 0 0;
+  font-size: 0.92rem;
+  font-style: italic;
+  color: var(--muted);
+}
+
+.pub-note { margin: 0.25rem 0 0; font-size: 0.97rem; }
+
+.pubs.minor {
+  font-size: 0.94rem;
+  color: var(--muted);
+}
+
+.pubs.minor li { margin: 0 0 0.3rem; padding-left: 1.1rem; position: relative; }
+
+.pubs.minor li::before { content: "\2014"; position: absolute; left: 0; color: var(--hairline); }
+
+/* ---------- roles (teaching, experience) ---------- */
+
+.roles {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.roles li { margin: 0 0 1.15rem; }
+
+.role-head {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: 0.6rem;
+}
+
+.role-head { font-weight: 600; }
+
+.role-head .org { font-weight: 400; color: var(--muted); }
+
+.role-head .period {
+  margin-left: auto;
+  font-size: 0.88rem;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.role-note { margin: 0.25rem 0 0; font-size: 0.97rem; }
+
+/* ---------- simple lists ---------- */
+
+.plain {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.plain li {
+  margin: 0 0 0.45rem;
+  padding-left: 1.1rem;
+  position: relative;
+}
+
+.plain li::before { content: "\2014"; position: absolute; left: 0; color: var(--muted); }
+
+.programs {
+  margin: 1rem 0 0;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+.programs strong, .plain strong { font-weight: 600; }
+
+/* ---------- links & button ---------- */
+
+a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.16em;
+}
+
+a:hover { color: var(--accent-strong); }
+
+button {
+  font: inherit;
+  font-size: 0.92rem;
+  color: var(--accent);
+  background: transparent;
+  border: 1px solid var(--hairline);
+  border-radius: 3px;
+  padding: 0.35rem 0.8rem;
+  cursor: pointer;
+}
+
+button:hover { border-color: var(--accent); }
+
+/* ---------- footer ---------- */
+
+footer {
+  margin-top: 3.6rem;
+  border-top: 1px solid var(--hairline);
+  padding-top: 1rem;
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+
+footer p { margin: 0 0 0.8rem; }
+
+/* ---------- print: the same page is the CV ---------- */
+
+@media print {
+  :root {
+    --bg: #ffffff;
+    --text: #000000;
+    --muted: #444444;
+    --accent: #000000;
+    --accent-strong: #000000;
+    --hairline: #cccccc;
+  }
+
+  body { font-size: 10.5pt; line-height: 1.45; }
+
+  main { max-width: none; padding: 0; margin: 0; }
+
+  section { margin-top: 1.1rem; }
+
+  h2 { padding-top: 0.4rem; margin-bottom: 0.55rem; }
+
+  h1 { font-size: 17pt; }
+
+  .tagline { font-size: 11.5pt; }
+
+  .pubs li, .roles li, .plain li { break-inside: avoid; }
+
+  a { color: inherit; }
+
+  .no-print { display: none; }
+
+  footer { margin-top: 1.2rem; }
+
+  @page { margin: 1.8cm 1.9cm; }
+}
